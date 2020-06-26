@@ -14,6 +14,7 @@
 @interface MoviesViewController () <UITableViewDataSource, UITableViewDelegate>
 @property (nonatomic, strong) NSArray *movies;
 @property (nonatomic, strong) UIRefreshControl *refreshControl;
+@property (nonatomic, strong) UIAlertController *fetchAlert;
 @property (weak, nonatomic) IBOutlet UITableView *moviesTableView;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
 
@@ -28,12 +29,22 @@
     self.moviesTableView.dataSource = self;
     self.moviesTableView.delegate = self;
     
-    [self fetchMovies];
+    self.fetchAlert = [UIAlertController alertControllerWithTitle:@"Cannot Fetch Movies" message:@"An error occured." preferredStyle:(UIAlertControllerStyleAlert)];
+    UIAlertAction *tryAgainAction = [UIAlertAction actionWithTitle:@"Try Again" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        NSLog(@"Button pressed");
+        [self fetchMovies];
+    }];
+    [self.fetchAlert addAction:tryAgainAction];
     
     self.refreshControl = [[UIRefreshControl alloc] init];
     [self.refreshControl addTarget:self action:@selector(fetchMovies) forControlEvents:UIControlEventValueChanged];
     [self.moviesTableView insertSubview:self.refreshControl atIndex:0];
     
+    
+}
+
+- (void) viewDidAppear:(BOOL)animated {
+    [self fetchMovies];
 }
 
 - (void)fetchMovies {
@@ -42,9 +53,13 @@
     NSURLSession *session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration] delegate:nil delegateQueue:[NSOperationQueue mainQueue]];
     NSURLSessionDataTask *task = [session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
         [self.activityIndicator startAnimating];
-        NSLog(self.activityIndicator.isAnimating ? @"YES" : @"NO");
+        //NSLog(self.activityIndicator.isAnimating ? @"YES" : @"NO");
            if (error != nil) {
                NSLog(@"%@", [error localizedDescription]);
+               
+               self.fetchAlert.message = [error localizedDescription];
+               [self presentViewController:self.fetchAlert animated:YES completion:nil];
+               
            }
            else {
                NSDictionary *dataDictionary = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
@@ -55,7 +70,7 @@
            }
         
         [self.activityIndicator stopAnimating];
-        NSLog(self.activityIndicator.isAnimating ? @"YES" : @"NO");
+        //NSLog(self.activityIndicator.isAnimating ? @"YES" : @"NO");
         [self.refreshControl endRefreshing];
        }];
     [task resume];
