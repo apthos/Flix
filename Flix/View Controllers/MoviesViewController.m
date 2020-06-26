@@ -15,6 +15,7 @@
 @property (nonatomic, strong) NSArray *movies;
 @property (nonatomic, strong) UIRefreshControl *refreshControl;
 @property (weak, nonatomic) IBOutlet UITableView *moviesTableView;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
 
 @end
 
@@ -40,6 +41,8 @@
     NSURLRequest *request = [NSURLRequest requestWithURL:url cachePolicy:NSURLRequestReloadIgnoringLocalCacheData timeoutInterval:10.0];
     NSURLSession *session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration] delegate:nil delegateQueue:[NSOperationQueue mainQueue]];
     NSURLSessionDataTask *task = [session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+        [self.activityIndicator startAnimating];
+        NSLog(self.activityIndicator.isAnimating ? @"YES" : @"NO");
            if (error != nil) {
                NSLog(@"%@", [error localizedDescription]);
            }
@@ -50,6 +53,9 @@
                
                [self.moviesTableView reloadData];
            }
+        
+        [self.activityIndicator stopAnimating];
+        NSLog(self.activityIndicator.isAnimating ? @"YES" : @"NO");
         [self.refreshControl endRefreshing];
        }];
     [task resume];
