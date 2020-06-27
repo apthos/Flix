@@ -44,22 +44,22 @@ Here's a walkthrough of implemented user stories:
 <img src='https://imgur.com/a/ZReQE7w' title='App Icon and Launch Screen' width='' alt='App Icon and Launch Screen' />
 
 2. List of movies with poster images, title and overview
-<img src='https://imgur.com/a/urDon5c' title= 'List of Movies' width='' alt='List of Movies' />
+<img src='https://imgur.com/a/urDon5c' title= 'List of Movies' width='100%' alt='List of Movies' />
 
 3. Pull to refresh
-<img src='https://imgur.com/a/5EjWgZq.gif' title='Refresh' width='' alt='Refresh' />
+<img src='https://imgur.com/a/5EjWgZq.gif' title='Refresh' width='100%' alt='Refresh' />
 
 4. Details view on tap
-<img src='https://imgur.com/a/XhLLtCA.gif' title='Details View' width='' alt='Details View' />
+<img src='https://imgur.com/a/XhLLtCA.gif' title='Details View' width='100%' alt='Details View' />
 
 5. Loading indicator
-<img src='https://imgur.com/a/69Rxuh9.gif' title='Loading Indicator' width='' alt='Loading Indicator' />
+<img src='https://imgur.com/a/69Rxuh9.gif' title='Loading Indicator' width='100%' alt='Loading Indicator' />
 
 6. Error message activated by network error
-<img src='https://imgur.com/a/g5hhb5b.gif' title='Error Message' width='' alt='Error Message' />
+<img src='https://imgur.com/a/g5hhb5b.gif' title='Error Message' width='100%' alt='Error Message' />
 
 7. Tab bar button to collection view
-<img src='https://imgur.com/a/FlZhtCh.gif' title='Tab Bar' width='' alt='Tab Bar' />
+<img src='https://imgur.com/a/FlZhtCh.gif' title='Tab Bar' width='100%' alt='Tab Bar' />
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
