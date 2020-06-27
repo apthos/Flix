@@ -15,6 +15,7 @@
 @property (nonatomic, strong) UIRefreshControl *refreshControl;
 @property (nonatomic, strong) UIAlertController *fetchAlert;
 @property (weak, nonatomic) IBOutlet UICollectionView *moviesCollectionView;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
 
 @end
 
@@ -59,8 +60,7 @@
     NSURLRequest *request = [NSURLRequest requestWithURL:url cachePolicy:NSURLRequestReloadIgnoringLocalCacheData timeoutInterval:10.0];
     NSURLSession *session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration] delegate:nil delegateQueue:[NSOperationQueue mainQueue]];
     NSURLSessionDataTask *task = [session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
-        //[self.activityIndicator startAnimating];
-        //NSLog(self.activityIndicator.isAnimating ? @"YES" : @"NO");
+        [self.activityIndicator startAnimating];
            if (error != nil) {
                NSLog(@"%@", [error localizedDescription]);
                
@@ -76,8 +76,7 @@
                [self.moviesCollectionView reloadData];
            }
         
-        //[self.activityIndicator stopAnimating];
-        //NSLog(self.activityIndicator.isAnimating ? @"YES" : @"NO");
+        [self.activityIndicator stopAnimating];
         [self.refreshControl endRefreshing];
        }];
     [task resume];

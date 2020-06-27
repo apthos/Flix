@@ -53,7 +53,6 @@
     NSURLSession *session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration] delegate:nil delegateQueue:[NSOperationQueue mainQueue]];
     NSURLSessionDataTask *task = [session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
         [self.activityIndicator startAnimating];
-        //NSLog(self.activityIndicator.isAnimating ? @"YES" : @"NO");
            if (error != nil) {
                NSLog(@"%@", [error localizedDescription]);
                
@@ -70,7 +69,6 @@
            }
         
         [self.activityIndicator stopAnimating];
-        //NSLog(self.activityIndicator.isAnimating ? @"YES" : @"NO");
         [self.refreshControl endRefreshing];
        }];
     [task resume];
