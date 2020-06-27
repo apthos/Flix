@@ -14,6 +14,7 @@
 @property (weak, nonatomic) IBOutlet UIImageView *posterView;
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *overviewLabel;
+@property (weak, nonatomic) IBOutlet UILabel *releaseDateLabel;
 
 @end
 
@@ -39,6 +40,7 @@
     
     self.titleLabel.text = self.movie[@"title"];
     self.overviewLabel.text = self.movie[@"overview"];
+    self.releaseDateLabel.text = self.movie[@"release_date"];
     
     //not recommended for autosize
     [self.titleLabel sizeToFit];
