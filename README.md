@@ -41,25 +41,25 @@ Please list two areas of the assignment you'd like to **discuss further with you
 Here's a walkthrough of implemented user stories:
 
 1. App icon and launch screen
-<img src='https://imgur.com/a/ZReQE7w' title='App Icon and Launch Screen' width='' alt='App Icon and Launch Screen' />
+<img src='https://i.imgur.com/KB597qo.gif' title='App Icon and Launch Screen' width='' alt='App Icon and Launch Screen' />
 
 2. List of movies with poster images, title and overview
-<img src='https://imgur.com/a/urDon5c' title= 'List of Movies' width='100%' alt='List of Movies' />
+<img src='https://i.imgur.com/BZfMaRi.gif' title= 'List of Movies' width='' alt='List of Movies' />
 
 3. Pull to refresh
-<img src='https://imgur.com/a/5EjWgZq.gif' title='Refresh' width='100%' alt='Refresh' />
+<img src='https://i.imgur.com/moeoEyG.gif' title='Refresh' width='' alt='Refresh' />
 
 4. Details view on tap
-<img src='https://imgur.com/a/XhLLtCA.gif' title='Details View' width='100%' alt='Details View' />
+<img src='https://i.imgur.com/Tal99TL.gif' title='Details View' width='' alt='Details View' />
 
 5. Loading indicator
-<img src='https://imgur.com/a/69Rxuh9.gif' title='Loading Indicator' width='100%' alt='Loading Indicator' />
+<img src='https://i.imgur.com/itK4Hsm.gif' title='Loading Indicator' width='' alt='Loading Indicator' />
 
 6. Error message activated by network error
-<img src='https://imgur.com/a/g5hhb5b.gif' title='Error Message' width='100%' alt='Error Message' />
+<img src='https://i.imgur.com/hZgymEA.gif' title='Error Message' width='' alt='Error Message' />
 
 7. Tab bar button to collection view
-<img src='https://imgur.com/a/FlZhtCh.gif' title='Tab Bar' width='100%' alt='Tab Bar' />
+<img src='https://i.imgur.com/sifUl86.gif' title='Tab Bar' width='' alt='Tab Bar' />
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
