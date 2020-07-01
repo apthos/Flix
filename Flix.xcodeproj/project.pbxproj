@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		241E777EDD7E3B70E027EE75 /* Pods_Flix.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EEAAB0AD6F09E3CAF200C63A /* Pods_Flix.framework */; };
 		9A26CA80618411FB9B2B4B2C /* Pods_Flix_FlixUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 304C0BC42CA6CF1198FC0A95 /* Pods_Flix_FlixUITests.framework */; };
+		B837BA9624ACF43D001D0DF5 /* Movie.m in Sources */ = {isa = PBXBuildFile; fileRef = B837BA9524ACF43D001D0DF5 /* Movie.m */; };
+		B837BA9A24AD0384001D0DF5 /* MovieApiManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B837BA9924AD0384001D0DF5 /* MovieApiManager.m */; };
 		EA60FD0624A550CB0065C0C7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EA60FD0524A550CB0065C0C7 /* AppDelegate.m */; };
 		EA60FD0924A550CB0065C0C7 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EA60FD0824A550CB0065C0C7 /* SceneDelegate.m */; };
 		EA60FD0F24A550CB0065C0C7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA60FD0D24A550CB0065C0C7 /* Main.storyboard */; };
@@ -46,6 +48,10 @@
 		304C0BC42CA6CF1198FC0A95 /* Pods_Flix_FlixUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Flix_FlixUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5DEB3D8E85EDE3FB46DB47AA /* Pods-Flix-FlixUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Flix-FlixUITests.release.xcconfig"; path = "Target Support Files/Pods-Flix-FlixUITests/Pods-Flix-FlixUITests.release.xcconfig"; sourceTree = "<group>"; };
 		679D9EA0744E96A700B668EE /* Pods_FlixTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FlixTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B837BA9424ACF43D001D0DF5 /* Movie.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Movie.h; sourceTree = "<group>"; };
+		B837BA9524ACF43D001D0DF5 /* Movie.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Movie.m; sourceTree = "<group>"; };
+		B837BA9824AD0384001D0DF5 /* MovieApiManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MovieApiManager.h; sourceTree = "<group>"; };
+		B837BA9924AD0384001D0DF5 /* MovieApiManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MovieApiManager.m; sourceTree = "<group>"; };
 		BAB8296E2B45F655D8C245DB /* Pods-Flix.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Flix.release.xcconfig"; path = "Target Support Files/Pods-Flix/Pods-Flix.release.xcconfig"; sourceTree = "<group>"; };
 		C680E70D466F6DFE1B4E6D55 /* Pods-Flix.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Flix.debug.xcconfig"; path = "Target Support Files/Pods-Flix/Pods-Flix.debug.xcconfig"; sourceTree = "<group>"; };
 		E333E5AF3CE0277A99B708BE /* Pods-Flix-FlixUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Flix-FlixUITests.debug.xcconfig"; path = "Target Support Files/Pods-Flix-FlixUITests/Pods-Flix-FlixUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -108,6 +114,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B837BA9324ACF41E001D0DF5 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				B837BA9424ACF43D001D0DF5 /* Movie.h */,
+				B837BA9524ACF43D001D0DF5 /* Movie.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		B837BA9724AD0306001D0DF5 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				B837BA9824AD0384001D0DF5 /* MovieApiManager.h */,
+				B837BA9924AD0384001D0DF5 /* MovieApiManager.m */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
 		D449497F9BD24A803A13FCE0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -143,6 +167,8 @@
 		EA60FD0324A550CB0065C0C7 /* Flix */ = {
 			isa = PBXGroup;
 			children = (
+				B837BA9724AD0306001D0DF5 /* API */,
+				B837BA9324ACF41E001D0DF5 /* Models */,
 				EA60FD3D24A5B6180065C0C7 /* Views */,
 				EA60FD3924A5629F0065C0C7 /* View Controllers */,
 				EA60FD0424A550CB0065C0C7 /* AppDelegate.h */,
@@ -457,8 +483,10 @@
 				EA60FD4424A643C50065C0C7 /* DetailsViewController.m in Sources */,
 				EA9D7C3B24A6969A005716AA /* MovieCollectionCell.m in Sources */,
 				EA60FD1724A550CD0065C0C7 /* main.m in Sources */,
+				B837BA9624ACF43D001D0DF5 /* Movie.m in Sources */,
 				EA60FD0924A550CB0065C0C7 /* SceneDelegate.m in Sources */,
 				EA9D7C3524A6931B005716AA /* MoviesGridViewController.m in Sources */,
+				B837BA9A24AD0384001D0DF5 /* MovieApiManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

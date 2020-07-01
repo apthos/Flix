@@ -24,28 +24,24 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    NSString *baseURLString = @"https://image.tmdb.org/t/p/w500";
-    NSString *posterURLString = self.movie[@"poster_path"];
-    NSString *fullPosterURLString = [baseURLString stringByAppendingString:posterURLString];
-    
-    NSURL *posterURL = [NSURL URLWithString:fullPosterURLString];
-    [self.posterView setImageWithURL:posterURL];
-    
-    
-    NSString *backdropURLString = self.movie[@"backdrop_path"];
-    NSString *fullBackdropURLString = [baseURLString stringByAppendingString:backdropURLString];
-    
-    NSURL *backdropURL = [NSURL URLWithString:fullBackdropURLString];
-    [self.backdropView setImageWithURL:backdropURL];
-    
-    self.titleLabel.text = self.movie[@"title"];
-    self.overviewLabel.text = self.movie[@"overview"];
-    self.releaseDateLabel.text = self.movie[@"release_date"];
-    
-    //not recommended for autosize
-    [self.titleLabel sizeToFit];
-    [self.overviewLabel sizeToFit];
-    
+//    NSString *baseURLString = @"https://image.tmdb.org/t/p/w500";
+//    NSString *posterURLString = self.movie[@"poster_path"];
+//    NSString *fullPosterURLString = [baseURLString stringByAppendingString:posterURLString];
+//    
+//    NSURL *posterURL = [NSURL URLWithString:fullPosterURLString];
+//    [self.posterView setImageWithURL:posterURL];
+//    
+//    
+//    NSString *backdropURLString = self.movie[@"backdrop_path"];
+//    NSString *fullBackdropURLString = [baseURLString stringByAppendingString:backdropURLString];
+//    
+//    NSURL *backdropURL = [NSURL URLWithString:fullBackdropURLString];
+//    [self.backdropView setImageWithURL:backdropURL];
+//    
+//    self.titleLabel.text = self.movie[@"title"];
+//    self.overviewLabel.text = self.movie[@"overview"];
+//    self.releaseDateLabel.text = self.movie[@"release_date"];
+//    
 }
 
 /*
